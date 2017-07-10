@@ -1,0 +1,13 @@
+{
+    "name": "eq/hexlet-brain-games",
+    "bin": ["bin/brain-games"],
+    "description": "Project brain-games",
+    "type": "project",
+    "authors": [
+        {
+            "name": "orion122",
+            "email": "yaru@bk.ru"
+        }
+    ],
+    "require": {}
+}
