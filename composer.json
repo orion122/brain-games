@@ -9,7 +9,4 @@
             "email": "yaru@bk.ru"
         }
     ],
-    "require": {
-        "wp-cli/php-cli-tools": "dev-master"
-    }
 }
