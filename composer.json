@@ -9,5 +9,6 @@
             "email": "yaru@bk.ru"
         }
     ],
-    "require": {}
+    "require": {},
+    "minimum-stability": "dev"
 }
