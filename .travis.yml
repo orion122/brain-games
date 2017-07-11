@@ -5,5 +5,7 @@ php:
 install:
   - composer self-update
   - make install
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
 
 script: make lint
