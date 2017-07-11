@@ -8,6 +8,9 @@
             "email": "yaru@bk.ru"
         }
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "autoload": {
         "files": ["src/Cli.php"]
     },
