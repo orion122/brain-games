@@ -14,9 +14,9 @@ function run()
     $name = prompt('May I have your name?');
     line("Hello, $name!" . PHP_EOL);
 
-    $correct_answers = 0;
+    $correctAnswers = 0;
 
-    while ($correct_answers < CORRECT_ANSWERS_TO_WIN) {
+    while ($correctAnswers < CORRECT_ANSWERS_TO_WIN) {
         $number = rand(1, 20);
         line("Question: $number");
 
@@ -25,11 +25,13 @@ function run()
 
         if ($answer === $expected) {
             line("Correct!");
-            $correct_answers++;
-        } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$expected'.");
-            line("Let's try again, $name!");
+            $correctAnswers++;
+            continue;
         }
+
+        line("'$answer' is wrong answer ;(. Correct answer was '$expected'.");
+        line("Let's try again, $name!");
+
     }
 
     line("Congratulations, $name!");
