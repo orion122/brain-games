@@ -31,7 +31,6 @@ function run()
 
         line("'$answer' is wrong answer ;(. Correct answer was '$expected'.");
         line("Let's try again, $name!");
-
     }
 
     line("Congratulations, $name!");
