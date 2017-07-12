@@ -1,23 +1,23 @@
 {
-    "name": "eq/hexlet-brain-games",
-    "bin": ["bin/brain-games"],
-    "type": "project",
-    "authors": [
-        {
-            "name": "ramazan",
-            "email": "yaru@bk.ru"
-        }
-    ],
-    "scripts": {
-        "phpcs": "phpcs"
-    },
-    "autoload": {
-        "files": ["src/Cli.php"]
-    },
-    "require": {
-        "wp-cli/php-cli-tools": "^0.11.3"
-    },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "*"
-    }
+  "name": "eq/hexlet-brain-games",
+  "bin": ["bin/brain-games"],
+  "type": "project",
+  "authors": [
+      {
+          "name": "ramazan",
+          "email": "yaru@bk.ru"
+      }
+  ],
+  "scripts": {
+      "phpcs": "phpcs"
+  },
+  "autoload": {
+      "files": ["src/Cli.php"]
+  },
+  "require": {
+      "wp-cli/php-cli-tools": "dev-master"
+  },
+  "require-dev": {
+      "squizlabs/php_codesniffer": "*"
+  }
 }
