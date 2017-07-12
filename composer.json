@@ -1,6 +1,6 @@
 {
   "name": "eq/hexlet-brain-games",
-  "bin": ["bin/brain-games"],
+  "bin": ["bin/brain-games", "bin/brain-even"],
   "type": "project",
   "authors": [
       {
