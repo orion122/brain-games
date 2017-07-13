@@ -2,13 +2,11 @@
 
 namespace BrainGames\game;
 
-use function BrainGames\Cli\greeting;
-use function BrainGames\Cli\startGame;
+use function BrainGames\common\greeting;
+use function BrainGames\common\startGame;
 
-function runCalc()
+function runCalc($name)
 {
-    $msgInstructions = 'What is the result of the expression?';
-
     $getQuestion = function () {
         $randomNumber1 = rand(1, 20);
         $randomNumber2 = rand(1, 20);
@@ -19,6 +17,7 @@ function runCalc()
 
         return $question;
     };
+
 
     $getExpected = function ($question) {
         $expected = function () use ($question) {
@@ -33,16 +32,18 @@ function runCalc()
         return $expected();
     };
 
+
     function firstNum($question, $operation)
     {
         return strstr($question, $operation, true);
     }
+
 
     function secondNum($question)
     {
         return substr($question, (strrpos($question, ' ')));
     }
 
-    $name = greeting($msgInstructions);
+
     startGame($name, $getQuestion, $getExpected);
 }
