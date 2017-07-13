@@ -2,36 +2,87 @@
 
 namespace BrainGames\Cli;
 
+use function BrainGames\calc\getExpected;
+use function BrainGames\calc\getQuestion;
 use function \cli\line;
 use function \cli\prompt;
 
+const MSG_WELCOME = "\nWelcome to the Brain Game!";
+const MSG_ANSWER = 'Your answer';
+const MSG_CORRECT = 'Correct!';
 const CORRECT_ANSWERS_TO_WIN = 3;
 
-function run()
-{
-    line("\nWelcome to the Brain Game!");
-    line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
-    $name = prompt('May I have your name?');
-    line("Hello, $name!" . PHP_EOL);
 
+function msgAskName()
+{
+    $name = prompt('May I have your name?');
+    return $name;
+}
+
+function msgGreet($name)
+{
+    return function () use ($name) {
+        return "Hello, $name!";
+    };
+}
+
+function msgQuestion($question)
+{
+    return function () use ($question) {
+        return "Question: $question";
+    };
+}
+
+function msgWrongCorrectAnswer($answer, $expected)
+{
+    return function () use ($answer, $expected) {
+        return "'$answer' is wrong answer ;(. Correct answer was '$expected'.";
+    };
+}
+
+function msgTryAgain($name)
+{
+    return function () use ($name) {
+        return "Let's try again, $name!";
+    };
+}
+
+function msgCongratulations($name)
+{
+    return function () use ($name) {
+        return "Congratulations, $name!";
+    };
+}
+
+function startGame($name)
+{
     $correctAnswers = 0;
 
     while ($correctAnswers < CORRECT_ANSWERS_TO_WIN) {
-        $number = rand(1, 20);
-        line("Question: $number");
-
-        $answer = prompt('Your answer');
-        $expected = $number % 2 === 0 ? 'yes' : 'no';
+        $question = getQuestion();
+        line(msgQuestion($question));
+        $answer = prompt(MSG_ANSWER);
+        $expected = getExpected($question);
 
         if ($answer === $expected) {
-            line("Correct!");
+            line(MSG_CORRECT);
             $correctAnswers++;
             continue;
         }
 
-        line("'$answer' is wrong answer ;(. Correct answer was '$expected'.");
-        line("Let's try again, $name!");
+        line(msgWrongCorrectAnswer($answer, $expected));
+        line(msgTryAgain($name));
     }
 
-    line("Congratulations, $name!");
+    line(msgCongratulations($name));
+}
+
+function greeting($msgInstructions)
+{
+    line(MSG_WELCOME);
+    line($msgInstructions . PHP_EOL);
+    $name = msgAskName();
+    line(msgGreet($name) . PHP_EOL);
+
+    return $name;
 }
