@@ -8,7 +8,7 @@ use function BrainGames\Cli\startGame;
 function runEven()
 {
     $msgInstructions = 'Answer "yes" if number even otherwise answer "no".';
-    
+
     $getQuestion = function () {
         $question = rand(1, 20);
         return $question;
