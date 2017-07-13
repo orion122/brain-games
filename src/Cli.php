@@ -34,7 +34,7 @@ function welcome()
 
 function showInstructions($instructions)
 {
-    line($instructions);
+    line($instructions . PHP_EOL);
 }
 
 
@@ -47,7 +47,7 @@ function getName()
 
 function greeting($name)
 {
-    line("Hello, $name");
+    line("Hello, $name" . PHP_EOL);
 }
 
 
