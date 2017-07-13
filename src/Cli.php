@@ -84,4 +84,3 @@ function startGame($name, $getQuestion, $getExpected)
 
     line(msgCongratulations($name));
 }
-
