@@ -2,8 +2,6 @@
 
 namespace BrainGames\Cli;
 
-use function BrainGames\calc\getExpected;
-use function BrainGames\calc\getQuestion;
 use function \cli\line;
 use function \cli\prompt;
 
@@ -54,15 +52,15 @@ function msgCongratulations($name)
     };
 }
 
-function startGame($name)
+function startGame($name, $getQuestion, $getExpected)
 {
     $correctAnswers = 0;
 
     while ($correctAnswers < CORRECT_ANSWERS_TO_WIN) {
-        $question = getQuestion();
+        $question = $getQuestion;
         line(msgQuestion($question));
         $answer = prompt(MSG_ANSWER);
-        $expected = getExpected($question);
+        $expected = $getExpected($question);
 
         if ($answer === $expected) {
             line(MSG_CORRECT);

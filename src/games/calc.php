@@ -9,42 +9,42 @@ const MSG_INSTRUCTIONS = 'What is the result of the expression?';
 
 function run()
 {
-    $name = greeting(MSG_INSTRUCTIONS);
-    startGame($name);
-}
+    $getQuestion = function ()
+    {
+        $randomNumber1 = rand(1, 20);
+        $randomNumber2 = rand(1, 20);
+        $arrayOfOperations = ['+', '-', '*'];
+        $randomOperation = $arrayOfOperations[rand(0, 2)];
 
-function getQuestion()
-{
-    $randomNumber1 = rand(1, 20);
-    $randomNumber2 = rand(1, 20);
-    $arrayOfOperations = ['+', '-', '*'];
-    $randomOperation = $arrayOfOperations[rand(0, 2)];
+        $question = $randomNumber1 . ' ' . $randomOperation . ' ' . $randomNumber2;
 
-    $question = $randomNumber1 . ' ' . $randomOperation . ' ' . $randomNumber2;
-
-    return $question;
-}
-
-function getExpected($question)
-{
-    $expected = function () use ($question) {
-        if (strpos($question, '+') !== false) {
-            return firstNum($question, '+') + secondNum($question);
-        } elseif (strpos($question, '-') !== false) {
-            return firstNum($question, '-') - secondNum($question);
-        }
-        return firstNum($question, '*') * secondNum($question);
+        return $question;
     };
 
-    return $expected;
-}
+    $getExpected = function ($question)
+    {
+        $expected = function () use ($question) {
+            if (strpos($question, '+') !== false) {
+                return firstNum($question, '+') + secondNum($question);
+            } elseif (strpos($question, '-') !== false) {
+                return firstNum($question, '-') - secondNum($question);
+            }
+            return firstNum($question, '*') * secondNum($question);
+        };
 
-function firstNum($question, $operation)
-{
-    return strstr($question, $operation);
-}
+        return $expected;
+    };
 
-function secondNum($question)
-{
-    return substr($question, (strrpos($question, ' ')));
+    function firstNum($question, $operation)
+    {
+        return strstr($question, $operation);
+    }
+
+    function secondNum($question)
+    {
+        return substr($question, (strrpos($question, ' ')));
+    }
+
+    $name = greeting(MSG_INSTRUCTIONS);
+    startGame($name, $getQuestion, $getExpected);
 }
