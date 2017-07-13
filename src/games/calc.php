@@ -7,7 +7,7 @@ use function BrainGames\Cli\startGame;
 
 const MSG_INSTRUCTIONS = 'What is the result of the expression?';
 
-function run()
+function runCalc()
 {
     $getQuestion = function ()
     {

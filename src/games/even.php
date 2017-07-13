@@ -7,7 +7,7 @@ use function BrainGames\Cli\startGame;
 
 const MSG_INSTRUCTIONS = 'Answer "yes" if number even otherwise answer "no".';
 
-function run()
+function runEven()
 {
     $getQuestion = function ()
     {
@@ -24,5 +24,3 @@ function run()
     $name = greeting(MSG_INSTRUCTIONS);
     startGame($name, $getQuestion, $getExpected);
 }
-
-
