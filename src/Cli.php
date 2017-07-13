@@ -19,37 +19,27 @@ function msgAskName()
 
 function msgGreet($name)
 {
-    return function () use ($name) {
-        return "Hello, $name!" . PHP_EOL;
-    };
+    return "Hello, $name!" . PHP_EOL;
 }
 
 function msgQuestion($question)
 {
-    return function () use ($question) {
-        return "Question: $question";
-    };
+    return "Question: $question";
 }
 
 function msgWrongCorrectAnswer($answer, $expected)
 {
-    return function () use ($answer, $expected) {
-        return "'$answer' is wrong answer ;(. Correct answer was '$expected'.";
-    };
+    return "'$answer' is wrong answer ;(. Correct answer was '$expected'.";
 }
 
 function msgTryAgain($name)
 {
-    return function () use ($name) {
-        return "Let's try again, $name!";
-    };
+    return "Let's try again, $name!";
 }
 
 function msgCongratulations($name)
 {
-    return function () use ($name) {
-        return "Congratulations, $name!";
-    };
+    return "Congratulations, $name!";
 }
 
 function greeting($msgInstructions)
