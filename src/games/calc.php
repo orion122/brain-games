@@ -5,12 +5,11 @@ namespace BrainGames\game;
 use function BrainGames\Cli\greeting;
 use function BrainGames\Cli\startGame;
 
-const MSG_INSTRUCTIONS = 'What is the result of the expression?';
-
 function runCalc()
 {
-    $getQuestion = function ()
-    {
+    $msgInstructions = 'What is the result of the expression?';
+
+    $getQuestion = function () {
         $randomNumber1 = rand(1, 20);
         $randomNumber2 = rand(1, 20);
         $arrayOfOperations = ['+', '-', '*'];
@@ -21,8 +20,7 @@ function runCalc()
         return $question;
     };
 
-    $getExpected = function ($question)
-    {
+    $getExpected = function ($question) {
         $expected = function () use ($question) {
             if (strpos($question, '+') !== false) {
                 return firstNum($question, '+') + secondNum($question);
@@ -45,6 +43,6 @@ function runCalc()
         return substr($question, (strrpos($question, ' ')));
     }
 
-    $name = greeting(MSG_INSTRUCTIONS);
+    $name = greeting($msgInstructions);
     startGame($name, $getQuestion, $getExpected);
 }
