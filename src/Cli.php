@@ -62,7 +62,7 @@ function startGame($name, $getQuestion, $getExpected)
         $answer = prompt(MSG_ANSWER);
         $expected = $getExpected($question);
 
-        if ($answer === $expected) {
+        if ($answer == $expected) {
             line(MSG_CORRECT);
             $correctAnswers++;
             continue;

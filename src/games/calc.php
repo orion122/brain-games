@@ -30,12 +30,12 @@ function runCalc()
             return firstNum($question, '*') * secondNum($question);
         };
 
-        return $expected;
+        return $expected();
     };
 
     function firstNum($question, $operation)
     {
-        return strstr($question, $operation);
+        return strstr($question, $operation, true);
     }
 
     function secondNum($question)
