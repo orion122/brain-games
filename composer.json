@@ -12,11 +12,7 @@
       "phpcs": "phpcs"
   },
   "autoload": {
-      "files": [
-        "src/Cli.php",
-        "src/games/even.php",
-        "src/games/calc.php"
-      ]
+      "files": ["src/Cli.php", "src/games/even.php", "src/games/calc.php"]
   },
   "require": {
       "wp-cli/php-cli-tools": "dev-master"
