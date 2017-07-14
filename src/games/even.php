@@ -6,6 +6,7 @@ use function BrainGames\Cli\startGame;
 
 const INSTRUCTIONS = 'Answer "yes" if number even otherwise answer "no".';
 
+
 function run()
 {
     $getQuestion = function () {

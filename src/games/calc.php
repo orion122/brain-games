@@ -6,6 +6,7 @@ use function BrainGames\Cli\startGame;
 
 const INSTRUCTIONS = 'What is the result of the expression?';
 
+
 function run()
 {
     $getQuestion = function () {
@@ -29,6 +30,7 @@ function run()
         };
         return $expected();
     };
+
 
     startGame(INSTRUCTIONS, $getQuestion, $getExpected);
 }
