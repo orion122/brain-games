@@ -1,11 +1,12 @@
 <?php
 
-namespace BrainGames\game;
+namespace BrainGames\game\even;
 
-use function BrainGames\common\greeting;
-use function BrainGames\common\startGame;
+use function BrainGames\Cli\startGame;
 
-function runEven($name)
+const INSTRUCTIONS = 'Answer "yes" if number even otherwise answer "no".';
+
+function run()
 {
     $getQuestion = function () {
         $question = rand(1, 20);
@@ -19,5 +20,5 @@ function runEven($name)
     };
 
 
-    startGame($name, $getQuestion, $getExpected);
+    startGame(INSTRUCTIONS, $getQuestion, $getExpected);
 }

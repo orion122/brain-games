@@ -1,11 +1,12 @@
 <?php
 
-namespace BrainGames\game;
+namespace BrainGames\game\calc;
 
-use function BrainGames\common\greeting;
-use function BrainGames\common\startGame;
+use function BrainGames\Cli\startGame;
 
-function runCalc($name)
+const INSTRUCTIONS = 'What is the result of the expression?';
+
+function run()
 {
     $getQuestion = function () {
         $randomNumber1 = rand(1, 20);
@@ -45,5 +46,5 @@ function runCalc($name)
     }
 
 
-    startGame($name, $getQuestion, $getExpected);
+    startGame(INSTRUCTIONS, $getQuestion, $getExpected);
 }
