@@ -13,9 +13,7 @@ function run()
         $randomNumber2 = rand(1, 20);
         $arrayOfOperations = ['+', '-', '*'];
         $randomOperation = $arrayOfOperations[rand(0, 2)];
-
         $question = $randomNumber1 . ' ' . $randomOperation . ' ' . $randomNumber2;
-
         return $question;
     };
 
@@ -29,22 +27,20 @@ function run()
             }
             return firstNum($question, '*') * secondNum($question);
         };
-
         return $expected();
     };
 
-
-    function firstNum($question, $operation)
-    {
-        return strstr($question, $operation, true);
-    }
-
-
-    function secondNum($question)
-    {
-        return substr($question, (strrpos($question, ' ')));
-    }
-
-
     startGame(INSTRUCTIONS, $getQuestion, $getExpected);
+}
+
+
+function firstNum($question, $operation)
+{
+    return strstr($question, $operation, true);
+}
+
+
+function secondNum($question)
+{
+    return substr($question, (strrpos($question, ' ')));
 }
