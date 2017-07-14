@@ -16,10 +16,16 @@ function run()
 
 
     $getExpected = function ($question) {
-        $expected = $question % 2 === 0 ? 'yes' : 'no';
+        $expected =  isEven($question) ? 'yes' : 'no';
         return $expected;
     };
 
 
     startGame(INSTRUCTIONS, $getQuestion, $getExpected);
+}
+
+
+function isEven($number)
+{
+    return $number % 2 === 0;
 }
