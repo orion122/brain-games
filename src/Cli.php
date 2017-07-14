@@ -43,7 +43,8 @@ function msgTryAgain($name)
 
 function startGame($instructions, $getQuestion, $getExpected)
 {
-    init($instructions);
+    line(MSG_WELCOME);
+    line($instructions . PHP_EOL);
 
     $name = getName();
     line("Hello, $name" . PHP_EOL);
