@@ -10,11 +10,6 @@ const MSG_ANSWER = 'Your answer';
 const MSG_CORRECT = 'Correct!';
 const CORRECT_ANSWERS_TO_WIN = 3;
 
-function init($instructions)
-{
-    line(MSG_WELCOME);
-    line($instructions);
-}
 
 function getName()
 {
