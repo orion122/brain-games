@@ -9,7 +9,7 @@ const MSG_WELCOME = "\nWelcome to the Brain Game!";
 const MSG_ASK_NAME = 'May I have your name?';
 const MSG_ANSWER = 'Your answer';
 const MSG_CORRECT = 'Correct!';
-const CORRECT_ANSWERS_TO_WIN = 30;
+const CORRECT_ANSWERS_TO_WIN = 3;
 
 
 function init($instructions)
