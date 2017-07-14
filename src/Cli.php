@@ -10,6 +10,12 @@ const MSG_ANSWER = 'Your answer';
 const MSG_CORRECT = 'Correct!';
 const CORRECT_ANSWERS_TO_WIN = 3;
 
+function init($instructions)
+{
+    line(MSG_WELCOME);
+    line($instructions . PHP_EOL);
+}
+
 
 function getName()
 {
@@ -20,26 +26,26 @@ function getName()
 
 function msgQuestion($question)
 {
-    return "Question: $question";
+    line("Question: $question");
 }
 
 
-function msgWrongCorrectAnswer($answer, $expected)
+function msgWrongAnswer($name, $answer, $expected)
 {
-    return "'$answer' is wrong answer ;(. Correct answer was '$expected'.";
+    line("'$answer' is wrong answer ;(. Correct answer was '$expected'.");
+    line("Let's try again, $name!");
 }
 
 
-function msgTryAgain($name)
+function congratulations($name)
 {
-    return "Let's try again, $name!";
+    line("Congratulations, $name!");
 }
 
 
 function startGame($instructions, $getQuestion, $getExpected)
 {
-    line(MSG_WELCOME);
-    line($instructions . PHP_EOL);
+    init($instructions);
 
     $name = getName();
     line("Hello, $name" . PHP_EOL);
@@ -48,7 +54,7 @@ function startGame($instructions, $getQuestion, $getExpected)
 
     while ($correctAnswers < CORRECT_ANSWERS_TO_WIN) {
         $question = $getQuestion();
-        line(msgQuestion($question));
+        msgQuestion($question);
         $answer = prompt(MSG_ANSWER);
         $expected = $getExpected($question);
 
@@ -58,9 +64,8 @@ function startGame($instructions, $getQuestion, $getExpected)
             continue;
         }
 
-        line(msgWrongCorrectAnswer($answer, $expected));
-        line(msgTryAgain($name));
+        msgWrongAnswer($name, $answer, $expected);
     }
 
-    line("Congratulations, $name!");
+    congratulations($name);
 }
