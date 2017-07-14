@@ -19,17 +19,7 @@ function run()
     $getExpected = function ($question) {
         list($firstNum, $secondNum) = explode(" ", $question);
         list($greater, $lower) = bigLess($firstNum, $secondNum);
-        $expected = function ($i, $gcd) use (&$expected, $greater, $lower) {
-            if ($i > $lower) {
-                return $gcd;
-            }
-            if (($lower % $i === 0) && ($greater % $i === 0)) {
-                $gcd = $i;
-            }
-            return $expected($i+1, $gcd);
-        };
-
-        return $expected(1, 1);
+        return gcd($greater, $lower);
     };
 
 
@@ -40,4 +30,19 @@ function run()
 function bigLess($a, $b)
 {
     return $a >= $b ? [$a, $b] : [$b, $a];
+}
+
+
+function gcd($greater, $lower)
+{
+    $expected = function ($i, $gcd) use (&$expected, $greater, $lower) {
+        if ($i > $lower) {
+            return $gcd;
+        }
+        if (($lower % $i === 0) && ($greater % $i === 0)) {
+            $gcd = $i;
+        }
+        return $expected($i+1, $gcd);
+    };
+    return $expected(1, 1);
 }
