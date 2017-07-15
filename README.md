@@ -9,7 +9,7 @@
 CLI-games: gcd, calc, even, prime, balance, progression
 
 ## Installation
-composer require eq/hexlet-brain-games
+$ composer require eq/hexlet-brain-games
 
 ## Usage
 $ bin/brain-gcd
