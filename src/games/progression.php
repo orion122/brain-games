@@ -21,14 +21,14 @@ function run()
         $expected =  findHiddenElement($question);
         return $expected;
     };
-    
+
     startGame(INSTRUCTION, $getQuestion, $getExpected);
 }
 
 
 function generateProgression()
 {
-    $a1 = rand(1, 20);
+    $firstElement = rand(1, 20);
     $d = rand(1, PROGRESSION_LENGTH-1);
     $progression = [];
 
@@ -40,7 +40,7 @@ function generateProgression()
         return $result($nextElement + $d, $length+1, $progression);
     };
 
-    return $result($a1, 0, $progression);
+    return $result($firstElement, 0, $progression);
 }
 
 
@@ -55,9 +55,19 @@ function hideRandomElement($progression)
 function findHiddenElement($question)
 {
     $progression = explode(' ', $question);
-    $a1 = $progression[0];
-    $d = $progression[1] - $a1;
     $indexOfHideElement = array_search('..', $progression);
-    $hideElement = $progression[$indexOfHideElement-1] + $d;
+
+    if ($indexOfHideElement == 0) {
+        $lastElement = $progression[PROGRESSION_LENGTH-1];
+        $penultimateElement = $progression[PROGRESSION_LENGTH-2];
+        $d = $lastElement - $penultimateElement;
+        $hideElement = $progression[$indexOfHideElement+1] - $d;
+    } else {
+        $firstElement = $progression[0];
+        $secondElement = $progression[1];
+        $d = $secondElement - $firstElement;
+        $hideElement = $progression[$indexOfHideElement-1] + $d;
+    }
+
     return $hideElement;
 }
