@@ -14,12 +14,10 @@ function run()
         return $question;
     };
 
-
     $getExpected = function ($question) {
         $expected =  isEven($question) ? 'yes' : 'no';
         return $expected;
     };
-
 
     startGame(INSTRUCTION, $getQuestion, $getExpected);
 }

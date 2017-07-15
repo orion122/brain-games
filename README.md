@@ -5,4 +5,21 @@
 [![Issue Count](https://codeclimate.com/github/orion122/project-lvl1-s136/badges/issue_count.svg)](https://codeclimate.com/github/orion122/project-lvl1-s136)
 [![Build Status](https://travis-ci.org/orion122/project-lvl1-s136.svg?branch=master)](https://travis-ci.org/orion122/project-lvl1-s136)
 
-### description
+## Description
+CLI-games: gcd, calc, even, prime, balance, progression
+
+## Installation
+composer require jougene/brain-games
+
+## Usage
+$ bin/brain-gcd
+
+$ bin/brain-calc
+
+$ bin/brain-even
+
+$ bin/brain-prime
+
+$ bin/brain-balance
+
+$ bin/brain-progression

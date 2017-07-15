@@ -34,6 +34,7 @@ function balance($numbers)
         list($indexMin, $indexMax) = indexOfMaxAndMin($n);
         return $result($n, $indexMin, $indexMax);
     };
+
     $expected = $result($numbers, 0, 0);
     sort($expected);
     return implode($expected);

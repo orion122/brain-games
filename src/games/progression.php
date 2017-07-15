@@ -29,7 +29,7 @@ function run()
 function generateProgression()
 {
     $firstElement = rand(1, 20);
-    $d = rand(1, PROGRESSION_LENGTH-1);
+    $d = rand(1, PROGRESSION_LENGTH - 1);
     $progression = [];
 
     $result = function ($nextElement, $length, $progression) use (&$result, $d) {
@@ -37,7 +37,7 @@ function generateProgression()
             return $progression;
         }
         $progression[] = $nextElement;
-        return $result($nextElement + $d, $length+1, $progression);
+        return $result($nextElement + $d, $length + 1, $progression);
     };
 
     return $result($firstElement, 0, $progression);
@@ -46,7 +46,7 @@ function generateProgression()
 
 function hideRandomElement($progression)
 {
-    $randomIndex = rand(0, PROGRESSION_LENGTH-1);
+    $randomIndex = rand(0, PROGRESSION_LENGTH - 1);
     $progression[$randomIndex] = '..';
     return $progression;
 }
@@ -58,15 +58,15 @@ function findHiddenElement($question)
     $indexOfHideElement = array_search('..', $progression);
 
     if ($indexOfHideElement == 0) {
-        $lastElement = $progression[PROGRESSION_LENGTH-1];
-        $penultimateElement = $progression[PROGRESSION_LENGTH-2];
+        $lastElement = $progression[PROGRESSION_LENGTH - 1];
+        $penultimateElement = $progression[PROGRESSION_LENGTH - 2];
         $d = $lastElement - $penultimateElement;
-        $hideElement = $progression[$indexOfHideElement+1] - $d;
+        $hideElement = $progression[$indexOfHideElement + 1] - $d;
     } else {
         $firstElement = $progression[0];
         $secondElement = $progression[1];
         $d = $secondElement - $firstElement;
-        $hideElement = $progression[$indexOfHideElement-1] + $d;
+        $hideElement = $progression[$indexOfHideElement - 1] + $d;
     }
 
     return $hideElement;

@@ -15,13 +15,11 @@ function run()
         return $firstNum . ' ' . $secondNum;
     };
 
-
     $getExpected = function ($question) {
         list($firstNum, $secondNum) = explode(" ", $question);
         list($greater, $lower) = bigLess($firstNum, $secondNum);
         return gcd($greater, $lower);
     };
-
 
     startGame(INSTRUCTION, $getQuestion, $getExpected);
 }
@@ -42,7 +40,8 @@ function gcd($greater, $lower)
         if (($lower % $i === 0) && ($greater % $i === 0)) {
             $gcd = $i;
         }
-        return $expected($i+1, $gcd);
+        return $expected($i + 1, $gcd);
     };
+
     return $expected(1, 1);
 }

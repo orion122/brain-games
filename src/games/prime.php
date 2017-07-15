@@ -14,7 +14,6 @@ function run()
         return $question;
     };
 
-
     $getExpected = function ($question) {
         $expected =  isPrime($question) ? 'yes' : 'no';
         return $expected;
@@ -22,6 +21,7 @@ function run()
 
     startGame(INSTRUCTION, $getQuestion, $getExpected);
 }
+
 
 function isPrime($question)
 {
@@ -32,10 +32,11 @@ function isPrime($question)
     $result = function ($i) use (&$result, $question) {
         if ($question % $i == 0) {
             return false;
-        } elseif ($i >= $question/2) {
+        } elseif ($i >= $question / 2) {
             return true;
         }
-        return $result($i+1);
+        return $result($i + 1);
     };
+
     return $result(2);
 }
