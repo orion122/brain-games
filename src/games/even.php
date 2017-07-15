@@ -4,7 +4,7 @@ namespace BrainGames\game\even;
 
 use function BrainGames\Cli\startGame;
 
-const INSTRUCTIONS = 'Answer "yes" if number even otherwise answer "no".';
+const INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".';
 
 
 function run()
@@ -21,7 +21,7 @@ function run()
     };
 
 
-    startGame(INSTRUCTIONS, $getQuestion, $getExpected);
+    startGame(INSTRUCTION, $getQuestion, $getExpected);
 }
 
 

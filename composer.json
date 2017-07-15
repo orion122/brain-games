@@ -1,6 +1,12 @@
 {
   "name": "eq/hexlet-brain-games",
-  "bin": ["bin/brain-games", "bin/brain-even", "bin/brain-calc", "bin/brain-gcd"],
+  "bin": [
+    "bin/brain-games",
+    "bin/brain-even",
+    "bin/brain-calc",
+    "bin/brain-gcd",
+    "bin/brain-balance"
+  ],
   "type": "project",
   "authors": [
       {
@@ -12,7 +18,13 @@
       "phpcs": "phpcs"
   },
   "autoload": {
-      "files": ["src/Cli.php", "src/games/even.php", "src/games/calc.php", "src/games/gcd.php"]
+      "files": [
+        "src/Cli.php",
+        "src/games/even.php",
+        "src/games/calc.php",
+        "src/games/gcd.php",
+        "src/games/balance.php"
+      ]
   },
   "require": {
       "wp-cli/php-cli-tools": "dev-master"

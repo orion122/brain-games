@@ -4,7 +4,7 @@ namespace BrainGames\game\calc;
 
 use function BrainGames\Cli\startGame;
 
-const INSTRUCTIONS = 'What is the result of the expression?';
+const INSTRUCTION = 'What is the result of the expression?';
 
 
 function run()
@@ -32,7 +32,7 @@ function run()
     };
 
 
-    startGame(INSTRUCTIONS, $getQuestion, $getExpected);
+    startGame(INSTRUCTION, $getQuestion, $getExpected);
 }
 
 
