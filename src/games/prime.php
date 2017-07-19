@@ -29,13 +29,13 @@ function isPrime($question)
         return true;
     }
 
-    $result = function ($i) use (&$result, $question) {
-        if ($question % $i == 0) {
+    $result = function ($divider) use (&$result, $question) {
+        if ($question % $divider == 0) {
             return false;
-        } elseif ($i >= $question / 2) {
+        } elseif ($divider >= $question / 2) {
             return true;
         }
-        return $result($i + 1);
+        return $result($divider + 1);
     };
 
     return $result(2);
