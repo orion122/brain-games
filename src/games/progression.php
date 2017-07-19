@@ -29,15 +29,15 @@ function run()
 function generateProgression()
 {
     $firstElement = rand(1, 20);
-    $d = rand(1, PROGRESSION_LENGTH - 1);
+    $delta = rand(1, PROGRESSION_LENGTH - 1);
     $progression = [];
 
-    $result = function ($nextElement, $length, $progression) use (&$result, $d) {
+    $result = function ($nextElement, $length, $progression) use (&$result, $delta) {
         if ($length == PROGRESSION_LENGTH) {
             return $progression;
         }
         $progression[] = $nextElement;
-        return $result($nextElement + $d, $length + 1, $progression);
+        return $result($nextElement + $delta, $length + 1, $progression);
     };
 
     return $result($firstElement, 0, $progression);
@@ -60,14 +60,14 @@ function findHiddenElement($question)
     if ($indexOfHideElement == 0) {
         $lastElement = $progression[PROGRESSION_LENGTH - 1];
         $penultimateElement = $progression[PROGRESSION_LENGTH - 2];
-        $d = $lastElement - $penultimateElement;
-        $hideElement = $progression[$indexOfHideElement + 1] - $d;
-    } else {
-        $firstElement = $progression[0];
-        $secondElement = $progression[1];
-        $d = $secondElement - $firstElement;
-        $hideElement = $progression[$indexOfHideElement - 1] + $d;
+        $delta = $lastElement - $penultimateElement;
+        $hideElement = $progression[$indexOfHideElement + 1] - $delta;
+        return $hideElement;
     }
 
+    $firstElement = $progression[0];
+    $secondElement = $progression[1];
+    $delta = $secondElement - $firstElement;
+    $hideElement = $progression[$indexOfHideElement - 1] + $delta;
     return $hideElement;
 }

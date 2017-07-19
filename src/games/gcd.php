@@ -25,22 +25,22 @@ function run()
 }
 
 
-function bigLess($a, $b)
+function bigLess($firstNum, $secondNum)
 {
-    return $a >= $b ? [$a, $b] : [$b, $a];
+    return $firstNum >= $secondNum ? [$firstNum, $secondNum] : [$secondNum, $firstNum];
 }
 
 
 function gcd($greater, $lower)
 {
-    $expected = function ($i, $gcd) use (&$expected, $greater, $lower) {
-        if ($i > $lower) {
+    $expected = function ($divider, $gcd) use (&$expected, $greater, $lower) {
+        if ($divider > $lower) {
             return $gcd;
         }
-        if (($lower % $i === 0) && ($greater % $i === 0)) {
-            $gcd = $i;
+        if (($lower % $divider === 0) && ($greater % $divider === 0)) {
+            $gcd = $divider;
         }
-        return $expected($i + 1, $gcd);
+        return $expected($divider + 1, $gcd);
     };
 
     return $expected(1, 1);

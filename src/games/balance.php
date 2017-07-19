@@ -24,15 +24,15 @@ function run()
 
 function balance($numbers)
 {
-    $result = function ($n, $indexMin, $indexMax) use (&$result) {
-        list($indexMin, $indexMax) = indexOfMaxAndMin($n);
-        if ($n[$indexMax] - $n[$indexMin] < 2) {
-            return $n;
+    $result = function ($nums, $indexMin, $indexMax) use (&$result) {
+        list($indexMin, $indexMax) = indexOfMaxAndMin($nums);
+        if ($nums[$indexMax] - $nums[$indexMin] < 2) {
+            return $nums;
         }
-        $n[$indexMax]--;
-        $n[$indexMin]++;
-        list($indexMin, $indexMax) = indexOfMaxAndMin($n);
-        return $result($n, $indexMin, $indexMax);
+        $nums[$indexMax]--;
+        $nums[$indexMin]++;
+        list($indexMin, $indexMax) = indexOfMaxAndMin($nums);
+        return $result($nums, $indexMin, $indexMax);
     };
 
     $expected = $result($numbers, 0, 0);

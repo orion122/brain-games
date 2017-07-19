@@ -18,5 +18,5 @@ Simple CLI-games:
 `$ composer require eq/hexlet-brain-games`
 
 ## Usage
-First add `~/vendor/bin/` to `$PATH`: `$ export PATH=~/vendor/bin/:$PATH`.
+Add `~/vendor/bin/` to `$PATH`: `$ export PATH=~/vendor/bin/:$PATH`.
 After that you can run any game. For example: `$ bin/brain-calc`
