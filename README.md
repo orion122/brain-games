@@ -6,20 +6,17 @@
 [![Build Status](https://travis-ci.org/orion122/project-lvl1-s136.svg?branch=master)](https://travis-ci.org/orion122/project-lvl1-s136)
 
 ## Description
-CLI-games: gcd, calc, even, prime, balance, progression
+Simple CLI-games:
+- brain-balance - Balance the given number
+- brain-calc - What is the result of the expression?
+- brain-even - Answer "yes" if number is even otherwise answer "no".
+- brain-prime - Answer "yes" if number is prime otherwise answer "no".
+- brain-gcd - Find the greatest common divisor of given numbers.
+- brain-progression - What number is missing in this progression?
 
 ## Installation
-$ composer require eq/hexlet-brain-games
+`$ composer require eq/hexlet-brain-games`
 
 ## Usage
-$ bin/brain-gcd
-
-$ bin/brain-calc
-
-$ bin/brain-even
-
-$ bin/brain-prime
-
-$ bin/brain-balance
-
-$ bin/brain-progression
+First add `~/vendor/bin/` to `$PATH`: `$ export PATH=~/vendor/bin/:$PATH`.
+After that you can run any game. For example: `$ bin/brain-calc`
