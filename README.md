@@ -1,8 +1,8 @@
 # Brain Games
 
-[![Code Climate](https://codeclimate.com/github/orion122/project-lvl1-s136/badges/gpa.svg)](https://codeclimate.com/github/orion122/project-lvl1-s136)
-[![Issue Count](https://codeclimate.com/github/orion122/project-lvl1-s136/badges/issue_count.svg)](https://codeclimate.com/github/orion122/project-lvl1-s136)
-[![Build Status](https://travis-ci.org/orion122/project-lvl1-s136.svg?branch=master)](https://travis-ci.org/orion122/project-lvl1-s136)
+[![Code Climate](https://codeclimate.com/github/orion122/brain-games/badges/gpa.svg)](https://codeclimate.com/github/orion122/brain-games)
+[![Issue Count](https://codeclimate.com/github/orion122/brain-games/badges/issue_count.svg)](https://codeclimate.com/github/orion122/brain-games)
+[![Build Status](https://travis-ci.org/orion122/brain-games.svg?branch=master)](https://travis-ci.org/orion122/brain-games)
 
 ## Description
 Simple CLI-games:
