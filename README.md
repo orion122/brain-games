@@ -1,6 +1,6 @@
 # Brain Games
 
-[![Code Climate](https://codeclimate.com/github/orion122/brain-games/badges/gpa.svg)](https://codeclimate.com/github/orion122/brain-games)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7e52f227e347b89d2212/maintainability)](https://codeclimate.com/github/orion122/brain-games/maintainability)
 [![Issue Count](https://codeclimate.com/github/orion122/brain-games/badges/issue_count.svg)](https://codeclimate.com/github/orion122/brain-games)
 [![Build Status](https://travis-ci.org/orion122/brain-games.svg?branch=master)](https://travis-ci.org/orion122/brain-games)
 
